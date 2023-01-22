@@ -1,4 +1,4 @@
-package com.gehc.uls.subscriber.entity;
+package com.gehc.uls.subscriber.builder;
 
 import com.rabbitmq.client.ConnectionFactory;
 
@@ -7,7 +7,6 @@ import java.security.NoSuchAlgorithmException;
 
 public class ConnectionFactoryBuilder {
     private static final ConnectionFactory connectionFactory = new ConnectionFactory();
-    private static final int SECURE_PROTOCOL = 5671;
 
 
     public static ConnectionFactory getInstance() {
@@ -17,7 +16,6 @@ public class ConnectionFactoryBuilder {
     public static void setDetails(String username, String password, String virtualHost, String hostName, int portNumber, String useSsl) {
         connectionFactory.setUsername(username);
         connectionFactory.setPassword(password);
-        // connectionFactory.setVirtualHost(virtualHost);
         connectionFactory.setHost(hostName);
         connectionFactory.setPort(portNumber);
 
